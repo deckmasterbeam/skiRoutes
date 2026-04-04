@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.topografix.com/GPX/gpx_style/0/2 http://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd" creator="Slopes" tracker="Slopes" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd http://www.garmin.com/xmlschemas/PowerExtension/v1 http://www.garmin.com/xmlschemas/PowerExtensionv1.xsd http://www.topografix.com/GPX/gpx_style/0/2 http://www.topografix.com/GPX/gpx_style/0/2/gpx_style.xsd" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:gpxpx="http://www.garmin.com/xmlschemas/PowerExtension/v1" xmlns:gpx_style="http://www.topografix.com/GPX/gpx_style/0/2">
+  <metadata>
+    <name>February 6, 2026 - Zermatt Matterhorn</name>
+    <author>
+      <name>gpx.studio</name>
+      <link href="https://gpx.studio"/>
+    </author>
+    <link href="https://getslopes.com">
+      <text>Slopes</text>
+    </link>
+  </metadata>
+  <wpt lat="45.986133" lon="7.775164">
+    <ele>2927.626788536087</ele>
+    <name>Start - Gifthittli</name>
+    <cmt>Start of test route</cmt>
+    <desc>Start of test route</desc>
+    <sym>Information</sym>
+  </wpt>
+  <wpt lat="46.00981" lon="7.769501">
+    <ele>2037.2192502723549</ele>
+    <name>End - Eja</name>
+    <cmt>End of test route</cmt>
+    <desc>End of test route</desc>
+    <sym>Exit</sym>
+  </wpt>
+  <wpt lat="46.001785" lon="7.772741">
+    <ele>2429.5829992941435</ele>
+    <name>checkmark - Breitboden</name>
+    <cmt>checkmark along the test route</cmt>
+    <desc>checkmark along the test route</desc>
+    <sym>Information</sym>
+  </wpt>
+</gpx>
