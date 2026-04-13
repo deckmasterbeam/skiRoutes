@@ -50,3 +50,4 @@ dist/
 
 # Vercel local project metadata
 .vercel/
+.vercel

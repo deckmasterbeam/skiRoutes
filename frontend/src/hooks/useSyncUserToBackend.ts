@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import { SAVE_USER_URL } from '../config/api';
 
 export function useSyncUserToBackend() {
   const [userLogged, setUserLogged] = useState(false);
@@ -20,7 +21,7 @@ export function useSyncUserToBackend() {
 
       const syncUser = async () => {
         try {
-          const response = await fetch('http://localhost:5000/api/save_user', {
+          const response = await fetch(SAVE_USER_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
