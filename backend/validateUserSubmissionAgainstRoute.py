@@ -12,7 +12,7 @@ def _local_name(tag: str) -> str:
         return tag.split("}", 1)[1]
     return tag
 
-def filename_to_tree(file_path: str) -> ET.ElementTree:
+def filename_to_tree(file_path: str) -> ET.ElementTree[ET.Element]:
     """Parse a GPX file into an ElementTree, with error handling."""
     try:
         tree = ET.parse(file_path)
@@ -24,12 +24,14 @@ def filename_to_tree(file_path: str) -> ET.ElementTree:
         print(f"{file_path}: ERROR: {e}")
         raise
 
-def get_waypoints_from_tree(tree: ET.ElementTree) -> List[dict]:
+def get_waypoints_from_tree(tree: ET.ElementTree[ET.Element]) -> List[dict]:
     """Extract all waypoints from a GPX tree of a route file.
     
     Returns a list of dicts with keys: lat, lon, name (if present)
     """
     root = tree.getroot()
+    if root is None:
+        return []
     waypoints = []
     
     for elem in root.iter():
@@ -50,7 +52,7 @@ def get_waypoints_from_tree(tree: ET.ElementTree) -> List[dict]:
     return waypoints
 
 
-def get_trackpoints_from_tree(tree: ET.ElementTree) -> List[dict]:
+def get_trackpoints_from_tree(tree: ET.ElementTree[ET.Element]) -> List[dict]:
     """Extract all trackpoints from a candidate GPX tree.
     
     Returns a list of dicts with keys: lat, lon, name (if present), time (if present)

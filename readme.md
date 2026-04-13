@@ -1,5 +1,23 @@
 <h1>Ski Routes</h1>
 
+<h2>Monorepo layout</h2>
+
+This repo uses a simple monorepo structure:
+
+- `frontend/` = Vite + React UI
+- `backend/` = Flask API + SQLite
+
+Run commands from repo root with scoped scripts:
+
+- `npm run dev:frontend`
+- `npm run dev:backend`
+- `npm run test:backend`
+
+Notes:
+
+- Flask database path is anchored to `backend/users.db`, so it stays consistent no matter which directory you run from.
+- For Vercel backend deploys, target the backend folder (`vercel deploy backend ...`).
+
 This project can currently take a user's submission and a route and show which waypoints from the route that the user hit.
 
 This project is intended to be vibe code forward to learn more about working with AI agents.
