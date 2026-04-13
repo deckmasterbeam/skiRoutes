@@ -4,7 +4,7 @@ import sqlite3
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
-DB_PATH = BASE_DIR / 'users.db'
+DB_PATH = Path('/tmp/users.db') if os.getenv('VERCEL') else BASE_DIR / 'users.db'
 POSTGRES_URL = (
     os.getenv('DATABASE_URL')
     or os.getenv('POSTGRES_URL_NON_POOLING')
