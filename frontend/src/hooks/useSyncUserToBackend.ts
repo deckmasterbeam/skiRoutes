@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { SAVE_USER_URL } from '../config/api';
+import { AUTH0_AUDIENCE } from '../config/auth';
 
 export function useSyncUserToBackend() {
   const [userLogged, setUserLogged] = useState(false);
-  const { isAuthenticated, user, isLoading } = useAuth0();
+  const { getAccessTokenSilently, isAuthenticated, user, isLoading } = useAuth0();
 
   useEffect(() => {
     if (isAuthenticated && user && !isLoading && !userLogged) {
@@ -21,9 +22,18 @@ export function useSyncUserToBackend() {
 
       const syncUser = async () => {
         try {
+          const accessToken = await getAccessTokenSilently(
+            AUTH0_AUDIENCE
+              ? { authorizationParams: { audience: AUTH0_AUDIENCE } }
+              : undefined,
+          );
+
           const response = await fetch(SAVE_USER_URL, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+              'Content-Type': 'application/json',
+            },
             body: JSON.stringify(payload),
           });
 
@@ -41,5 +51,5 @@ export function useSyncUserToBackend() {
 
       void syncUser();
     }
-  }, [isAuthenticated, user, isLoading, userLogged]);
+  }, [getAccessTokenSilently, isAuthenticated, user, isLoading, userLogged]);
 }
