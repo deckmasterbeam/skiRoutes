@@ -13,6 +13,15 @@
     "dev:backend": "python backend/app.py",
     "test:backend": "python -m pytest backend/tests",
     "dev": "npm run dev:frontend",
-    "deploy:backend:preview": "vercel deploy backend -y --no-wait"
+    "deploy:backend:preview": "vercel deploy backend -y --no-wait",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.3"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx,json,css,md}": "prettier --write"
   }
 }
