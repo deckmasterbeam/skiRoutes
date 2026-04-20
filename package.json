@@ -6,12 +6,13 @@
     "frontend"
   ],
   "scripts": {
+    "setup": "node scripts/setup.cjs",
     "dev:frontend": "npm --prefix frontend run dev",
     "build:frontend": "npm --prefix frontend run build",
     "lint:frontend": "npm --prefix frontend run lint",
     "preview:frontend": "npm --prefix frontend run preview",
-    "dev:backend": "python backend/app.py",
-    "test:backend": "python -m pytest backend/tests",
+    "dev:backend": "node scripts/venv-exec.cjs backend/app.py",
+    "test:backend": "node scripts/venv-exec.cjs -m pytest backend/tests",
     "dev": "npm run dev:frontend",
     "deploy:backend:preview": "vercel deploy backend -y --no-wait"
   }

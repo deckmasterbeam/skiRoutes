@@ -28,6 +28,9 @@ var/
 *.db-shm
 *.sqlite3
 
+# Python virtual environment
+.venv/
+
 # VS Code settings
 .vscode/
 
